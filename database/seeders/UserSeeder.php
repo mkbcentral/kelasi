@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'email'=>'johndoe@test.app',
             'password'=> bcrypt('password'),
             'role_id'=>1,
-            'school_id'=>2
+            'school_id'=>1
         ]);
     }
 }

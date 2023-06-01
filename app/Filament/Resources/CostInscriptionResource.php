@@ -17,7 +17,7 @@ class CostInscriptionResource extends Resource
 {
     protected static ?string $model = CostInscription::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-s-clipboard-list';
 
     protected static ?string $navigationGroup = 'Cost management';
 

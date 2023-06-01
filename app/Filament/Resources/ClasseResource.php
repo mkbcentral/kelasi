@@ -18,7 +18,7 @@ class ClasseResource extends Resource
 {
     protected static ?string $model = Classe::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-s-table';
 
     protected static ?string $navigationGroup = 'School manager';
 

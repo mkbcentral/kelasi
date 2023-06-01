@@ -31,4 +31,14 @@ class School extends Model
     {
         return $this->hasMany(SchoolSection::class);
     }
+
+    /**
+     * Get all of the students for the School
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function students(): HasMany
+    {
+        return $this->hasMany(School::class);
+    }
 }

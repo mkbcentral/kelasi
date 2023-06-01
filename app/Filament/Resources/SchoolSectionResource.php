@@ -18,7 +18,7 @@ class SchoolSectionResource extends Resource
 {
     protected static ?string $model = SchoolSection::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-s-office-building';
 
     protected static ?string $navigationGroup = 'School manager';
 

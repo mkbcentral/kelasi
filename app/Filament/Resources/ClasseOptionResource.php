@@ -20,7 +20,7 @@ class ClasseOptionResource extends Resource
 {
     protected static ?string $model = ClasseOption::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-s-identification';
 
     protected static ?string $navigationGroup = 'School manager';
 

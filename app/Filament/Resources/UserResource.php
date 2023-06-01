@@ -22,6 +22,7 @@ class UserResource extends Resource
 
     protected static ?string $navigationGroup = 'Administration';
 
+
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()->where('school_id', auth()->user()->school->id);

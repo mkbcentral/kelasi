@@ -18,7 +18,7 @@ class CostOtherTypeResource extends Resource
 {
     protected static ?string $model = CostOtherType::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-s-document-text';
 
     protected static ?string $navigationGroup = 'Cost management';
 
