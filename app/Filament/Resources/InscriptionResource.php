@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\InscriptionResource\Pages;
 
 use App\Models\Inscription;
-use App\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
