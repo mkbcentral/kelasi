@@ -1,117 +1,42 @@
 <div>
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <h2 class="text-xl font-semibold leading-tight">
-                {{ __('New Inscription') }}
+            <h2 class="font-semibold leading-tight text-2xl text-gray-500 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                 {{ __('New Inscription') }}
             </h2>
-            <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"
-                class="justify-center max-w-xs gap-2">
-                <x-icons.github class="w-6 h-6" aria-hidden="true" />
-                <span>Star on Github</span>
-            </x-button>
+            <nav class="flex bg-gray-50 text-gray-700 border border-gray-200 py-3 px-5 rounded-lg dark:bg-gray-800 dark:border-gray-700"
+                aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="{{ route('dashboard') }}"
+                            class="text-sm text-gray-700 hover:text-gray-900 inline-flex items-center dark:text-gray-400 dark:hover:text-white">
+                            <x-icons.dashboard class="flex-shrink-0 w-5 h-5" aria-hidden="true" />
+                            Dahsboard
+                        </a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-400 ml-1 md:ml-2 text-sm font-medium dark:text-gray-500">New
+                                inscription</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
         </div>
     </x-slot>
-
-    <div>
-        <form method="POST" action="{{ route('login') }}" class="p-3">
-            @csrf
-            <div class="grid grid-cols-3 gap-6">
-                <!-- Email Address -->
-                <div class="space-y-2">
-                    <x-form.label for="name" :value="__('Full name')" />
-                    <x-form.input-with-icon-wrapper>
-                        <x-slot name="icon">
-                            <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
-                        </x-slot>
-                        <x-form.input withicon id="name" class="block w-full" type="text" name="name"
-                            :value="old('name')" placeholder="{{ __('name') }}" required autofocus />
-                    </x-form.input-with-icon-wrapper>
-                </div>
-                <!-- date_of_birth -->
-                <div class="space-y-2">
-                    <x-form.label for="date_of_birth" :value="__('Date of birth')" />
-
-                    <x-form.input-with-icon-wrapper>
-                        <x-slot name="icon">
-                            <x-heroicon-o-calendar aria-hidden="true" class="w-5 h-5" />
-                        </x-slot>
-
-                        <x-form.input withicon id="date_of_birth" class="block w-full" type="date"
-                            name="date_of_birth" required autocomplete="current-date_of_birth"
-                            placeholder="{{ __('date_of_birth') }}" />
-                    </x-form.input-with-icon-wrapper>
-                </div>
-                <!-- gender -->
-                <div class="space-y-2">
-                    <x-form.label for="gender" :value="__('gender')" />
-                    <x-form.input-select class="flex ">
-                        <x-form.input-with-icon-wrapper class="flex">
-                            <x-slot name="icon">
-                                <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
-                            </x-slot>
-                            <option selected class="ml-4">Choose gender</option>
-                            <option value="M">Masculin</option>
-                        </x-form.input-with-icon-wrapper>
-                    </x-form.input-select>
-                </div>
-                <!-- gender -->
-
-            </div>
-            <div class="grid grid-cols-3 gap-6 mt-4">
-                <!-- gender -->
-                <div class="space-y-2">
-                    <x-form.label for="gender" :value="__('gender')" />
-                    <x-form.input-select class="" id="gender">
-                        <x-form.input-with-icon-wrapper class="flex">
-                            <x-slot name="icon">
-                                <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
-                            </x-slot>
-                            <option selected class="ml-4">Choose gender</option>
-                            <option value="M">Masculin</option>
-                        </x-form.input-with-icon-wrapper>
-                    </x-form.input-select>
-                </div>
-                <!-- gender -->
-
-                <!-- classe -->
-                <div class="space-y-2">
-                    <x-form.label for="classe_id" :value="__('Classe')" />
-                    <x-form.input-select class="" id="classe_id">
-                        <x-form.input-with-icon-wrapper class="flex">
-                            <x-slot name="icon">
-                                <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
-                            </x-slot>
-                            <option selected class="ml-4">Choose classe_id</option>
-                            <option value="M">Masculin</option>
-                        </x-form.input-with-icon-wrapper>
-                    </x-form.input-select>
-                </div>
-                <!-- classe -->
-                <!-- cost_inscription_id -->
-                <div class="space-y-2">
-                    <x-form.label for="cost_inscription_id" :value="__('Type cost')" />
-                    <x-form.input-select class=" " id="cost_inscription_id">
-                        <x-form.input-with-icon-wrapper class="flex">
-                            <x-slot name="icon">
-                                <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
-                            </x-slot>
-                            <option selected class="ml-4">Choose cost_inscription_id</option>
-                            <option value="M">Masculin</option>
-                        </x-form.input-with-icon-wrapper>
-                    </x-form.input-select>
-                </div>
-                <!-- gender -->
-
-            </div>
-            <div class="mt-4 ml-4">
-                <x-button class="justify-center  gap-2">
-                    <x-heroicon-o-pencil-alt class="w-6 h-6" aria-hidden="true" />
-                    <span>{{ __('Create') }}</span>
-                </x-button>
-            </div>
-        </form>
+    <div class="p-2 bg-white shadow-md rounded-md">
+        @livewire('secretaryship.inscription.create-new-inscription-page')
     </div>
-
-
-
+   <div class="mt-4">
+    @livewire('secretaryship.inscription.list-new-inscriptions-page')
+   </div>
 </div>
